@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "nav buttons"
+    "footer buttons"
+    ;
+    grid-template-columns: 10em 1fr;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+    background-image: url(../imgs/banner.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #461187;
+    color: #fff;
+    height: cover;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav span {
+    color: #ffc0ff;
+}
+
+main {
+    grid-area: main;
+    background-color: #713aa4;
+    height: cover;
+}
+
+.card_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.card {
+    background: radial-gradient(circle, grey, #5d0b99);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card p {
+    padding: 0 1em;
+    color: #fff;
+}
+
+.card .price {
+    font-size: 1.2em;
+    color: #ffc0ff;
+    margin: 1em 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.buttons {
+    grid-area: buttons;
+    text-align: center;
+    padding: 2rem;
+    gap: 1rem;
+    color: black;
+    background-color: #7a56a0;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    background-color: #3c2059;
+    text-align: center;
+    font-size: 14px;
+    height: 15vh;
+}
+
+.font{
+ color: #fff;
+}
+
+.hamburguesa .burguer {
+    display: none;
+}
+
+.social {
+    text-align: center;
+    font-size: 24px;
+}
+
+.color {
+    color: #fff;
+}
+
+@media screen and (max-width: 350px) {
+    .grid_container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "buttons"
+    "footer"
+    ;
+    }
+    nav {
+        display: none;
+    }
+    
+    .hamburguesa {
+        display: flex;
+        gap: 1rem;
+    }
+    .hamburguesa .burguer {
+        display: block;
+    }
+    .burguer {
+        padding-top: 1.7rem;
+    }
+    
+    .card_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    header { 
+        background-image: url(../imgs/banner.png);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; 
+    }
+    footer {
+        justify-content: center;
+    }
+}
